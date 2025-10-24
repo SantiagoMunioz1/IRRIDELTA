@@ -50,32 +50,30 @@ function Home() {
     return (
 
         <div className="w-full bg-white">
-            
+
             <Helmet>
                 {/* Etiqueta <title> (La más importante para SEO) */}
-                <title>IRRIDELTA | Soluciones integrales de Riegos y Piscinas en Argentina</title>
+                <title>IRRIDELTA | Riego y Piscinas</title>
 
                 {/* Etiqueta <meta name="description"> */}
-                <meta 
-                    name="description" 
+                <meta
+                    name="description"
                     content="IRRIDELTA, expertos con 30+ años en sistemas de riego y piscinas. Marcas líderes, stock integral y soporte técnico asegurado."
                 />
 
                 {/* Etiquetas Open Graph (OG) para redes sociales */}
                 <meta property="og:title" content="IRRIDELTA | Riego y Piscinas" />
-                <meta property="og:description" content="Sistemas de riego eficientes, insumos de primeras marcas y asesoramiento especializado en Argentina." />
+                <meta property="og:description" content="Sistemas de riego eficientes, insumos de primeras marcas y asesoramiento especializado." />
                 <meta property="og:url" content="http://www.irridelta.com.ar/" />
-                {/* Debes reemplazar esta URL por la URL absoluta de la imagen de previsualización (tu logo o un banner atractivo) */}
-                <meta property="og:image" content="http://localhost:5173/logo-irridelta-nav.png" />
+                <meta property="og:image" content="https://irridelta.com.ar/logo-irridelta-nav.png" />
                 <meta property="og:type" content="website" />
-
                 {/* Etiqueta Canónica (Recomendada) */}
                 <link rel="canonical" href="http://www.irridelta.com.ar/" />
             </Helmet>
 
             {/* 1. Banner Principal (Hero Section) */}
-            <section className="relative h-[60vh] md:h-[80vh] bg-cover bg-center" 
-                style={{ backgroundImage: "url('/ampliada 1.jpg')" }}> 
+            <section className="relative h-[60vh] md:h-[80vh] bg-cover bg-center"
+                style={{ backgroundImage: "url('/ampliada 1.jpg')" }}>
                 <div className="absolute inset-0 bg-black opacity-40"></div>
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-center relative z-10 text-white">
                     <h1 className="text-4xl md:text-6xl font-extrabold leading-tight">
@@ -84,7 +82,7 @@ function Home() {
                     <p className="mt-4 text-xl md:text-2xl font-light">
                         Insumos de primera marca, experiencia de más de 30 años y soporte técnico garantizado.
                     </p>
-                    
+
                 </div>
             </section>
 
@@ -102,7 +100,7 @@ function Home() {
                     </div>
                 </div>
             </section>
-            
+
             {/* 3. NUEVA SECCIÓN: Conexión Social */}
             <section className="py-12  bg-gray-300">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -111,11 +109,11 @@ function Home() {
                     </h2>
                     <div className="flex justify-center space-x-6">
                         {socialLinks.map((link) => (
-                            <a 
+                            <a
                                 key={link.label}
-                                href={link.href} 
-                                target="_blank" 
-                                rel="noopener noreferrer" 
+                                href={link.href}
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 className={`p-4 rounded-full bg-gray-100 ${link.color} transition duration-300 transform hover:scale-110 ${link.hover} hover:text-white shadow-md`}
                                 aria-label={`Visita nuestro perfil de ${link.label}`}
                             >
@@ -133,19 +131,19 @@ function Home() {
                     <h2 className="text-3xl font-extrabold text-gray-900 text-center mb-8">
                         Trabajamos con las Marcas Líderes
                     </h2>
-                    
+
                     {/* Contenedor Fijo: Usamos Grid para centrar las marcas y adaptar el ancho */}
                     <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-4 justify-items-center">
                         {partnerBrands.map((brand, index) => (
-                            <div 
-                                key={index} 
+                            <div
+                                key={index}
                                 className="w-full p-4 bg-white rounded-lg shadow-md hover:shadow-xl transition duration-300 transform hover:scale-105 brand-logo-card-home"
-                                // Asegúrate de que la clase 'brand-logo-card-home' esté definida en tu CSS global para el efecto hover/grayscale
+                            // Asegúrate de que la clase 'brand-logo-card-home' esté definida en tu CSS global para el efecto hover/grayscale
                             >
-                                <img 
-                                    src={brand.logoUrl} 
-                                    alt={`Logo de ${brand.name}`} 
-                                    className="h-16 w-full object-contain" 
+                                <img
+                                    src={brand.logoUrl}
+                                    alt={`Logo de ${brand.name}`}
+                                    className="h-16 w-full object-contain"
                                 />
                                 <p className="text-center mt-2 text-sm font-semibold text-gray-600">{brand.name}</p>
                             </div>

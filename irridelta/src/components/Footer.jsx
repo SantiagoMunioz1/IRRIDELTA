@@ -1,20 +1,21 @@
 // Footer.jsx
 import React from 'react';
 // IMPORTANTE: Asegúrate de importar Link si estás usando react-router-dom
-import { Link } from 'react-router-dom'; 
+import { Link } from 'react-router-dom';
 
 // Las importaciones de tus logos SVG
 import InstagramLogo from "../../public/instagram-logo-blanco.svg";
 import FacebookLogo from "../../public/facebook-logo-blanco.svg";
-import SettingsLogo from "../../public/settings-logo.svg"; 
+import SettingsLogo from "../../public/settings-logo.svg";
+import IrrideltaLogo from "../../public/logo-irridelta-nav.png";
 
 
 function Footer() {
-    const facebookUrl = "https://www.facebook.com/p/Irridelta-100064054083065/?locale=es_LA"; 
+    const facebookUrl = "https://www.facebook.com/p/Irridelta-100064054083065/?locale=es_LA";
     const instagramUrl = "https://instagram.com/irridelta";
     // ✅ Define la ruta del panel de administración
-    const adminPath = "/admin/productos"; 
-    
+    const adminPath = "/admin/productos";
+
     // NOTA: Los componentes FacebookIcon e InstagramIcon se han eliminado ya que usas <img src={...} />
 
     return (
@@ -23,26 +24,36 @@ function Footer() {
             {/* Contenido centrado y espaciado */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-400">
 
+                {/* ✅ Contenedor del Logo Principal (Nuevo) */}
+                <div className="mb-6 flex justify-center">
+                    <img
+                        src={IrrideltaLogo}
+                        alt="Logo Irridelta"
+                        className="h-20 w-auto" // Ajusta el tamaño según sea necesario (e.g., h-10 para una altura de 40px)
+                    />
+                </div>
+                {/* ----------------------------------------------------- */}
+
                 {/* Contenedor de Íconos de Redes Sociales */}
                 <div className="flex justify-center space-x-6 mb-4">
-                    
+
                     {/* Enlace de Facebook (usando tu imagen importada) */}
-                    <a 
-                        href={facebookUrl} 
-                        target="_blank" 
+                    <a
+                        href={facebookUrl}
+                        target="_blank"
                         rel="noopener noreferrer"
                         aria-label="Ir a Facebook de Irridelta"
                         // Aplicamos el hover para que la interacción sea clara, ya que el logo es una imagen.
-                        className="text-gray-400 hover:opacity-75 transition duration-200" 
+                        className="text-gray-400 hover:opacity-75 transition duration-200"
                     >
                         {/* La clase mr-2 en la imagen no es necesaria aquí, ya que el espaciado lo da 'space-x-6' */}
-                        <img src={FacebookLogo} alt="Facebook" className="w-6 h-6" /> 
+                        <img src={FacebookLogo} alt="Facebook" className="w-6 h-6" />
                     </a>
 
                     {/* Enlace de Instagram (usando tu imagen importada) */}
-                    <a 
-                        href={instagramUrl} 
-                        target="_blank" 
+                    <a
+                        href={instagramUrl}
+                        target="_blank"
                         rel="noopener noreferrer"
                         aria-label="Ir a Instagram de Irridelta"
                         className="text-gray-400 hover:opacity-75 transition duration-200"
@@ -59,11 +70,11 @@ function Footer() {
 
             </div>
 
-            <Link 
-                to={adminPath} 
-                className="absolute bottom-1 right-2 p-2 
-                           text-gray-600 hover:text-gray-400 transition duration-200 
-                           rounded-full" // Estilos discretos
+            <Link
+                to={adminPath}
+                className="absolute bottom-1 right-2 p-2
+                                    text-gray-600 hover:text-gray-400 transition duration-200
+                                    rounded-full" // Estilos discretos
                 aria-label="Acceso al panel de administración"
             >
                 {/* ⚙️ El logo de Settings */}
